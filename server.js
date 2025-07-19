@@ -1,32 +1,33 @@
 import express from 'express';
 import mysql from 'mysql2';
-import cors from 'cors'; // ✅ CORS import
+import cors from 'cors';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
-const PORT = 3000;
-
-// ✅ Enable CORS for all origins
-app.use(cors());
-app.use(express.json());
+const PORT = process.env.PORT || 3000;
 
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '12345',  // ⚠️ make sure this is correct
-  database: 'portfolio_db',
-  port: 3307          
+  host: 'containers-us-west-12.railway.app',
+  port: 12345,
+  user: 'railway_user',
+  password: 'abc123',
+  database: 'railway_db',
 });
-
 
 db.connect(err => {
   if (err) {
     console.error('DB connection error:', err);
   } else {
-    console.log('Connected to MySQL');
+    console.log('Connected to Railway MySQL!');
   }
 });
 
-// ✅ POST API
+app.use(cors());
+app.use(express.json());
+
+// POST /api/contact
 app.post('/api/contact', (req, res) => {
   const { name, email, message } = req.body;
   if (!name || !email || !message) {
@@ -43,12 +44,7 @@ app.post('/api/contact', (req, res) => {
   });
 });
 
-// ✅ Start server
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
-});
-
-// Sign Up API
+// POST /api/signup
 app.post('/api/signup', (req, res) => {
   const { name, email, password } = req.body;
   if (!name || !email || !password) {
@@ -64,7 +60,7 @@ app.post('/api/signup', (req, res) => {
   });
 });
 
-// Login API
+// POST /api/login
 app.post('/api/login', (req, res) => {
   const { email, password } = req.body;
   if (!email || !password) {
@@ -82,4 +78,8 @@ app.post('/api/login', (req, res) => {
       res.status(401).json({ success: false, error: 'Invalid email or password' });
     }
   });
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
 });
