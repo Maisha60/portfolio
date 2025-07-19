@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maisha Maliha Jahan | Portfolio</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      prefix: 'tw-',
+    }
+  </script>
+
+  <!-- AOS Animate On Scroll CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+
+<body class="tw-font-sans tw-text-gray-100 tw-bg-gradient-to-br tw-from-blue-900 tw-via-blue-700 tw-to-red-900">
+
+  <!-- Navbar -->
+  <nav class="tw-flex tw-justify-between tw-items-center tw-p-6 tw-bg-blue-950 tw-fixed tw-w-full tw-top-0 tw-z-50">
+    <h1 class="tw-text-3xl tw-font-bold tw-text-white">Maisha Maliha Jahan</h1>
+    <ul class="tw-flex tw-gap-6">
+      <li><a href="#home" class="tw-hover:text-red-300">Home</a></li>
+      <li><a href="#about" class="tw-hover:text-red-300">About</a></li>
+      <li><a href="#projects" class="tw-hover:text-red-300">Projects</a></li>
+      <li><a href="#contact" class="tw-hover:text-red-300">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section
+    id="home"
+    data-aos="fade-up"
+    class="tw-scroll-mt-28 tw-flex tw-flex-col tw-items-center tw-justify-center tw-h-screen tw-pt-32 tw-text-center tw-bg-gradient-to-r tw-from-blue-800 tw-to-red-800"
+  >
+  <img 
+    src="images/profile1.jpg" 
+    alt="Profile Image" 
+    data-aos="zoom-in"
+    class="tw-w-48 tw-h-48 tw-rounded-full tw-shadow-lg tw-border-4 tw-border-white tw-mb-6"
+  />
+    <h2 class="tw-text-5xl tw-font-extrabold tw-mb-4">Hi, I'm Maisha!</h2>
+    <p class="tw-text-xl tw-text-gray-200 tw-mb-6 tw-max-w-xl">
+      I'm a passionate developer & designer. I love creating beautiful, functional web experiences.
+    </p>
+    <div class="tw-space-x-4">
+      <a
+        href="#projects"
+        class="tw-inline-block tw-bg-red-600 tw-px-6 tw-py-3 tw-rounded tw-font-semibold tw-text-white tw-hover:bg-red-700"
+      >See My Work</a>
+      <a
+        href="#contact"
+        class="tw-inline-block tw-border tw-border-gray-300 tw-text-gray-300 tw-px-6 tw-py-3 tw-rounded tw-font-semibold tw-hover:text-black tw-bg-white/10 hover:tw-bg-white/30"
+      >Contact Me</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section
+    id="about"
+    data-aos="fade-right"
+    class="tw-scroll-mt-28 tw-max-w-3xl tw-mx-auto tw-p-12 tw-border tw-border-blue-800 tw-bg-blue-950 tw-rounded-lg tw-my-12"
+  >
+    <h2 class="tw-text-4xl tw-font-bold tw-mb-4">About Me</h2>
+    <p class="tw-text-lg">
+      Hello! I'm Maisha Maliha Jahan. I’m a dedicated developer and designer with a passion for creating impactful digital experiences.
+    </p>
+  </section>
+
+  <!-- Projects Section -->
+  <section
+    id="projects"
+    data-aos="zoom-in-up"
+    class="tw-scroll-mt-28 tw-max-w-5xl tw-mx-auto tw-p-12 tw-border tw-border-blue-800 tw-bg-blue-950 tw-rounded-lg tw-my-12"
+  >
+    <h2 class="tw-text-4xl tw-font-bold tw-mb-8 tw-text-center">My Projects</h2>
+
+    <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-6">
+      <div
+        class="tw-bg-blue-900 tw-border tw-border-blue-800 tw-rounded-lg tw-p-6 tw-transition tw-transform tw-origin-center tw-duration-500 tw-ease-in-out hover:tw-scale-105 hover:tw-shadow-2xl"
+        data-aos="fade-up"
+      >
+        <h3 class="tw-text-2xl tw-font-semibold tw-text-white mb-2">Project 1</h3>
+        <p class="tw-text-gray-300">A short description of Project 1 goes here.</p>
+      </div>
+
+      <div
+        class="tw-bg-blue-900 tw-border tw-border-blue-800 tw-rounded-lg tw-p-6 tw-transition tw-transform tw-origin-center tw-duration-500 tw-ease-in-out hover:tw-scale-105 hover:tw-shadow-2xl"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <h3 class="tw-text-2xl tw-font-semibold tw-text-white mb-2">Project 2</h3>
+        <p class="tw-text-gray-300">A short description of Project 2 goes here.</p>
+      </div>
+
+      <div
+        class="tw-bg-blue-900 tw-border tw-border-blue-800 tw-rounded-lg tw-p-6 tw-transition tw-transform tw-origin-center tw-duration-500 tw-ease-in-out hover:tw-scale-105 hover:tw-shadow-2xl"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <h3 class="tw-text-2xl tw-font-semibold tw-text-white mb-2">Project 3</h3>
+        <p class="tw-text-gray-300">A short description of Project 3 goes here.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section
+    id="contact"
+    class="tw-scroll-mt-28 tw-max-w-xl tw-mx-auto tw-p-12 tw-border tw-border-blue-800 tw-bg-blue-950 tw-rounded-lg tw-my-12 tw-text-center"
+    data-aos="fade-up"
+  >
+    <h2 class="tw-text-4xl tw-font-bold tw-mb-4">Contact Me</h2>
+    <p class="tw-text-gray-300 tw-mb-8">Feel free to reach out!</p>
+
+    <form id="contactForm" class="tw-flex tw-flex-col tw-gap-4">
+      <input id="name" type="text" placeholder="Your Name" class="tw-p-3 tw-rounded tw-text-black" required />
+      <input id="email" type="email" placeholder="Your Email" class="tw-p-3 tw-rounded tw-text-black" required />
+      <textarea id="message" placeholder="Your Message" class="tw-p-3 tw-rounded tw-text-black" rows="5" required></textarea>
+      <button
+        type="submit"
+        class="tw-bg-red-600 tw-px-6 tw-py-3 tw-rounded tw-font-semibold tw-text-white tw-hover:bg-red-700"
+      >
+        Send
+      </button>
+    </form>
+    <p id="responseMessage" class="tw-mt-4"></p>
+  </section>
+
+  <!-- Footer -->
+  
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: false, mirror: true });
+
+    const form = document.getElementById('contactForm');
+    const responseMessage = document.getElementById('responseMessage');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        responseMessage.textContent = 'Please fill in all fields.';
+        responseMessage.style.color = 'red';
+        return;
+      }
+
+      try {
+        const res = await fetch('https://your-backend-name.onrender.com/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, message }),
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          responseMessage.textContent = '✅ Message sent successfully!';
+          responseMessage.style.color = 'lightgreen';
+          form.reset();
+        } else {
+          responseMessage.textContent = '❌ Failed: ' + (data.error || 'Unknown error');
+          responseMessage.style.color = 'red';
+        }
+      } catch (err) {
+        responseMessage.textContent = '❌ Error sending message.';
+        responseMessage.style.color = 'red';
+      }
+    });
+  </script>
+</body>
+<!-- Add this just before </body> -->
+
+<script>
+  // ✅ Check auth before showing portfolio
+  if (!localStorage.getItem('loggedIn')) {
+    window.location.href = "signup.html";
+  }
+</script>
+
+<!-- Optional: Logout Button somewhere -->
+<footer class="tw-bg-blue-950 tw-border-t tw-border-blue-800 tw-text-center tw-py-6 tw-text-sm tw-text-gray-400">
+  &copy; 2025 Maisha Maliha Jahan |
+  <button onclick="logout()" class="tw-text-red-400 hover:tw-underline">Logout</button>
+</footer>
+
+<script>
+  function logout() {
+    localStorage.removeItem('loggedIn');
+    window.location.href = "login.html";
+  }
+</script>
+
+</html>

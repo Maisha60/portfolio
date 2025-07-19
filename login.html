@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      prefix: 'tw-',
+    }
+  </script>
+</head>
+<body class="tw-font-sans tw-bg-gradient-to-br tw-from-blue-900 tw-via-blue-700 tw-to-red-900 tw-text-white">
+
+  <header class="tw-text-center tw-py-8 tw-bg-blue-950">
+    <h1 class="tw-text-4xl tw-font-bold">Hey, Welcome to My Personal Website!</h1>
+    <p class="tw-mt-2 tw-text-gray-300">To reach my work, please login first</p>
+  </header>
+
+  <main class="tw-flex tw-items-center tw-justify-center tw-min-h-[70vh]">
+    <div class="tw-bg-blue-950 tw-p-8 tw-rounded-lg tw-shadow-lg tw-w-full tw-max-w-md">
+      <h2 class="tw-text-3xl tw-font-bold tw-mb-6 text-center">Login</h2>
+
+      <input id="email" placeholder="Email" class="tw-w-full tw-p-3 tw-rounded tw-text-black tw-mb-4"/>
+      <input type="password" id="password" placeholder="Password" class="tw-w-full tw-p-3 tw-rounded tw-text-black tw-mb-6"/>
+
+      <button onclick="login()" class="tw-bg-blue-600 tw-p-3 tw-w-full tw-rounded tw-font-bold hover:tw-bg-blue-700">Login</button>
+
+      <p id="authMsg" class="tw-mt-4 tw-text-center"></p>
+
+      <p class="tw-mt-4 tw-text-center">Not signed up yet? 
+        <a href="signup.html" class="tw-text-green-300 hover:tw-underline">Sign Up here</a>
+      </p>
+    </div>
+  </main>
+
+  <footer class="tw-bg-blue-950 tw-border-t tw-border-blue-800 tw-text-center tw-py-6 tw-text-sm tw-text-gray-400">
+    &copy; 2025 Maisha Maliha Jahan
+  </footer>
+
+  <script>
+    async function login() {
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const msg = document.getElementById('authMsg');
+
+      if (!email || !password) {
+        msg.textContent = "Please fill in all fields.";
+        msg.style.color = "red";
+        return;
+      }
+
+      const res = await fetch('https://your-backend-name.onrender.com/api/login', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ email, password })
+      });
+
+      const data = await res.json();
+      if (res.ok && data.success) {
+        localStorage.setItem('loggedIn', 'true'); // ✅ Save auth
+        msg.textContent = "✅ Login Successful! Redirecting...";
+        msg.style.color = "lightgreen";
+        document.getElementById('email').value = "";
+        document.getElementById('password').value = "";
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 1000);
+      } else {
+        msg.textContent = "❌ " + data.error;
+        msg.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
