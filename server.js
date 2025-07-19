@@ -9,12 +9,13 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const db = mysql.createConnection({
-  host: 'containers-us-west-12.railway.app',
-  port: 12345,
-  user: 'railway_user',
-  password: 'abc123',
-  database: 'railway_db',
+  host: 'centerbeam.proxy.rlwy.net',
+  port: 51374,
+  user: 'root',
+  password: 'CouNNalUSpKvSsXyFKMhlpFUUsWpoSmp',
+  database: 'railway',
 });
+
 
 db.connect(err => {
   if (err) {
